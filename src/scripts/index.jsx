@@ -464,10 +464,11 @@ class Joyride extends React.Component {
   /**
    * Move to the next step, if there is one.  If there is no next step, hide the tooltip.
    */
-  next() {
+  next(newIndex) {
     const { index, shouldRenderTooltip } = this.state;
     const { steps } = this.props;
-    const nextIndex = index + 1;
+    const nextIndex
+    newIndex ? nextIndex = newIndex : nextIndex = index + 1;
 
     const shouldDisplay = Boolean(steps[nextIndex]) && shouldRenderTooltip;
 
